@@ -1,4 +1,7 @@
 # PI.iesb
 Trabalho de PI
 
-# APP DE POSTAGEM DE FOTOS, ONDE SERA OFERECIDOS FOTOS DE DIVERSAS CATEGORIAS
+# APICATIVO DE COMPARTILHAMENTO DE FOTOS ENTRE AMIGOS
+o Aplicativo tera como intuito postagem de fotos, onde a ideia e compartilhar registro entre amigos.
+
+
