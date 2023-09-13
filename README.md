@@ -5,7 +5,7 @@
 PRIMEIRA TELA: Botão de Get Started
 
 SEGUNDA TELA: Tela de login: Opção de usuario e senha + esqueci minha senha e Cadastre-se
-- Esqueci miha senha: CApo para digitar e-mail
+- Esqueci miha senha: Campo para digitar e-mail
 - Cadastre-se: Dados pessoais
   
 TERÇEIRA TELA: Tela de perfil
