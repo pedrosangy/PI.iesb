@@ -6,6 +6,7 @@ import {
   ImageBackground,
   Platform,
   StatusBar,
+  TouchableOpacity
 } from "react-native";
 
 const EsqueciASenha = () => {
@@ -17,12 +18,14 @@ const EsqueciASenha = () => {
         alignItems: "center",
         paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
       }}
-      source={require("../assets/telaBackground1.png")}
+      source={require("../assets/telalogin.png")}
     >
+      <TouchableOpacity>
       <Image
         style={{ position: "relative", top: -220, left: -135 }}
         source={require("../assets/btnVoltar.png")}
       />
+      </TouchableOpacity>
       <View
         style={{
           alignItems: "center",
@@ -48,6 +51,7 @@ const EsqueciASenha = () => {
           style={{ backgroundColor: "#D9D9D9", alignSelf: "stretch" }}
         />
 
+        <TouchableOpacity>
         <Text
           style={{
             backgroundColor: "#D9D9D9",
@@ -59,6 +63,7 @@ const EsqueciASenha = () => {
         >
           Enviar
         </Text>
+        </TouchableOpacity>
       </View>
     </ImageBackground>
   );

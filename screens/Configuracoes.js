@@ -1,4 +1,4 @@
-import { View, StyleSheet, Text, Image } from "react-native";
+import { View, StyleSheet, Text, Image, TouchableOpacity } from "react-native";
 
 const Configuracoes = () => {
   return (
@@ -7,64 +7,78 @@ const Configuracoes = () => {
         flex: 1,
         flexDirection: "column",
         justifyContent: "space-between",
+        paddingTop: 20,
       }}
     >
       <View style={styles.header}>
-        <Image
-          source={require("../assets/btnVoltar.png")}
-          style={{ width: 30, height: 30, marginRight: 70 }}
-          resizeMode="contain"
-        />
+        <TouchableOpacity>
+          <Image
+            source={require("../assets/btnVoltar.png")}
+            style={{ width: 30, height: 30, marginRight: 70 }}
+            resizeMode="contain"
+          />
+        </TouchableOpacity>
         <Text style={{ marginRight: 85, fontWeight: "bold", fontSize: 15 }}>
           Configuracoes
         </Text>
       </View>
 
       <View style={{ marginTop: 20 }}>
-        <Text
-          style={{
-            backgroundColor: "#D9D9D9",
-            padding: 5,
-            marginHorizontal: 20,
-            marginVertical: 5,
-            fontWeight: "bold",
-          }}
-        >
-          Conta Privada
-        </Text>
-        <Text
-          style={{
-            backgroundColor: "#D9D9D9",
-            padding: 5,
-            marginHorizontal: 20,
-            marginVertical: 5,
-            fontWeight: "bold",
-          }}
-        >
-          Editar senha
-        </Text>
-        <Text
-          style={{
-            backgroundColor: "#D9D9D9",
-            padding: 5,
-            marginHorizontal: 20,
-            marginVertical: 5,
-            fontWeight: "bold",
-          }}
-        >
-          Excluir conta
-        </Text>
-        <Text
-          style={{
-            backgroundColor: "#D9D9D9",
-            padding: 5,
-            marginHorizontal: 20,
-            marginVertical: 5,
-            fontWeight: "bold",
-          }}
-        >
-          Sair
-        </Text>
+        <TouchableOpacity>
+          <Text
+            style={{
+              backgroundColor: "#D9D9D9",
+              padding: 10,
+              marginHorizontal: 20,
+              marginVertical: 5,
+              fontWeight: "bold",
+            }}
+          >
+            Conta Privada
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity>
+          <Text
+            style={{
+              backgroundColor: "#D9D9D9",
+              padding: 10,
+              marginHorizontal: 20,
+              marginVertical: 5,
+              fontWeight: "bold",
+            }}
+          >
+            Editar senha
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity>
+          <Text
+            style={{
+              backgroundColor: "#D9D9D9",
+              padding: 10,
+              marginHorizontal: 20,
+              marginVertical: 5,
+              fontWeight: "bold",
+            }}
+          >
+            Excluir conta
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity>
+          <Text
+            style={{
+              backgroundColor: "#D9D9D9",
+              padding: 10,
+              marginHorizontal: 20,
+              marginVertical: 5,
+              fontWeight: "bold",
+            }}
+          >
+            Sair
+          </Text>
+        </TouchableOpacity>
       </View>
 
       <View
@@ -75,12 +89,20 @@ const Configuracoes = () => {
           justifyContent: "space-between",
         }}
       >
-        <Image
-          style={{ marginLeft: 10 }}
-          source={require("../assets/search_outline.png")}
-        />
-        <Image source={require("../assets/plus_circle.png")} />
-        <Image source={require("../assets/person.png")} />
+        <TouchableOpacity>
+          <Image
+            style={{ marginLeft: 10 }}
+            source={require("../assets/search_outline.png")}
+          />
+        </TouchableOpacity>
+
+        <TouchableOpacity>
+          <Image source={require("../assets/plus_circle.png")} />
+        </TouchableOpacity>
+
+        <TouchableOpacity>
+          <Image style={{ marginRight: 10 }}  source={require("../assets/person.png")} />
+        </TouchableOpacity>
       </View>
     </View>
   );
