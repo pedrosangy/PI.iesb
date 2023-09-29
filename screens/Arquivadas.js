@@ -1,0 +1,111 @@
+import {
+  View,
+  StyleSheet,
+  Text,
+  Image,
+  TouchableOpacity,
+  ScrollView,
+} from "react-native";
+
+const Arquivadas = () => {
+  return (
+    <View
+      style={{
+        flex: 1,
+        flexDirection: "column",
+        justifyContent: "space-between",
+        paddingTop: 20,
+      }}
+    >
+      {/* Header */}
+      <View
+        style={{
+          flex: 1,
+          marginTop: 22,
+          flexDirection: "row",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <TouchableOpacity>
+          <Image
+            source={require("../assets/btnVoltar.png")}
+            style={{ width: 30, height: 30, marginRight: 70 }}
+            resizeMode="contain"
+          />
+        </TouchableOpacity>
+        <Text style={{ marginRight: 85, fontWeight: "bold", fontSize: 15 }}>
+          Arquivadas
+        </Text>
+      </View>
+
+      {/* Fotos arquivadas */}
+      <View style={{ flex: 15, alignSelf: "flex-start", marginTop: 20 }}>
+        <ScrollView>
+          <View
+            style={{
+              flexDirection: "row",
+              flexWrap: "wrap",
+              padding: 10,
+            }}
+          >
+            <View style={{ width: "50%", height: 180 }}>
+              <Image
+                source={require("../assets/imagem1.png")}
+                resizeMode="cover"
+                style={{ width: "100%", height: 180 }}
+              />
+            </View>
+
+            <View style={{ width: "50%", height: 180 }}>
+              <Image
+                source={require("../assets/imagem2.png")}
+                resizeMode="cover"
+                style={{ width: "100%", height: 180 }}
+              />
+            </View>
+
+            <View style={{ width: "50%", height: 180 }}>
+              <Image
+                source={require("../assets/imagem3.png")}
+                resizeMode="cover"
+                style={{ width: "100%", height: 180 }}
+              />
+            </View>
+          </View>
+        </ScrollView>
+      </View>
+
+      {/* Footer */}
+      <View
+        style={{
+          flex: 1,
+          width: "100%",
+          height: 45,
+          flexDirection: "row",
+          justifyContent: "space-between",
+        }}
+      >
+        <TouchableOpacity>
+          <Image
+            style={{ marginLeft: 10 }}
+            source={require("../assets/search_outline.png")}
+          />
+        </TouchableOpacity>
+
+        <TouchableOpacity>
+          <Image source={require("../assets/plus_circle.png")} />
+        </TouchableOpacity>
+
+        <TouchableOpacity>
+          <Image
+            style={{ marginRight: 10 }}
+            source={require("../assets/person.png")}
+          />
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
+};
+
+export default Arquivadas;
