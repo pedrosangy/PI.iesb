@@ -1,8 +1,8 @@
-import Login from './screens/Login';
+import Perfil from './screens/Perfil';
 
 const App = () => {
   return (
-    <Login />
+    <Perfil />
   )
 }
 

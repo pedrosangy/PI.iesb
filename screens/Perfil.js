@@ -136,7 +136,7 @@ const Perfil = () => {
             </View>
 
             <View
-              style={{ width: "50%", height: 200, backgroundColor: "blue" }}
+              style={{ width: "50%", height: 200 }}
             >
               <Image
                 source={require("../assets/imagem6.png")}

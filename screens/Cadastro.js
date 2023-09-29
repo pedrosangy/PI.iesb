@@ -6,6 +6,7 @@ import {
   Image,
   ImageBackground,
   TextInput,
+  TouchableOpacity,
 } from "react-native";
 
 const Cadastro = () => {
@@ -17,12 +18,14 @@ const Cadastro = () => {
         alignItems: "center",
         paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
       }}
-      source={require("../assets/telaBackground1.png")}
+      source={require("../assets/telalogin.png")}
     >
-      <Image
-        style={{ position: "relative", top: -220, left: -135 }}
-        source={require("../assets/btnVoltar.png")}
-      />
+      <TouchableOpacity>
+        <Image
+          style={{ position: "relative", top: -220, left: -135 }}
+          source={require("../assets/btnVoltar.png")}
+        />
+      </TouchableOpacity>
       <View
         style={{
           alignItems: "center",
@@ -60,18 +63,20 @@ const Cadastro = () => {
         <TextInput
           style={{ backgroundColor: "#D9D9D9", alignSelf: "stretch" }}
         />
-        <Text
-          style={{
-            marginTop: 10,
-            backgroundColor: "#D9D9D9",
-            textAlign: "center",
-            borderRadius: 20,
-            padding: 5,
-            paddingHorizontal: 30,
-          }}
-        >
-          Concluir
-        </Text>
+        <TouchableOpacity>
+          <Text
+            style={{
+              marginTop: 10,
+              backgroundColor: "#D9D9D9",
+              textAlign: "center",
+              borderRadius: 20,
+              padding: 5,
+              paddingHorizontal: 30,
+            }}
+          >
+            Concluir
+          </Text>
+        </TouchableOpacity>
       </View>
     </ImageBackground>
   );

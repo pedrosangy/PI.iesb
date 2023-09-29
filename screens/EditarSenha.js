@@ -6,6 +6,7 @@ import {
   ImageBackground,
   Platform,
   StatusBar,
+  TouchableOpacity
 } from "react-native";
 
 const EditarSenha = () => {
@@ -17,12 +18,14 @@ const EditarSenha = () => {
         alignItems: "center",
         paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
       }}
-      source={require("../assets/telaBackground2.png")}
+      source={require("../assets/telabackground.png")}
     >
+      <TouchableOpacity>
       <Image
         style={{ position: "relative", top: -220, left: -135 }}
         source={require("../assets/btnVoltar.png")}
       />
+      </TouchableOpacity>
       <View
         style={{
           justifyContent: "space-around",
@@ -61,6 +64,7 @@ const EditarSenha = () => {
           secureTextEntry={true}
         />
 
+        <TouchableOpacity>
         <Text
           style={{
             backgroundColor: "#D9D9D9",
@@ -72,6 +76,7 @@ const EditarSenha = () => {
         >
           Confirmar
         </Text>
+        </TouchableOpacity>
       </View>
     </ImageBackground>
   );

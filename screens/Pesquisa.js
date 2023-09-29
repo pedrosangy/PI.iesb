@@ -1,13 +1,15 @@
-import { View, Text, Image, TextInput } from "react-native";
+import { View, Text, Image, TextInput, TouchableOpacity } from "react-native";
 
 const Pesquisa = () => {
   return (
     <View style={{ flex: 1, justifyContent: "space-between", marginTop: 50 }}>
       <View style={{ flexDirection: "row", justifyContent: "flex-start" }}>
-        <Image
-          source={require("../assets/btnVoltar.png")}
-          style={{ width: 20, height: 20, marginLeft: 12 }}
-        />
+        <TouchableOpacity>
+          <Image
+            source={require("../assets/btnVoltar.png")}
+            style={{ width: 20, height: 20, marginLeft: 12 }}
+          />
+        </TouchableOpacity>
       </View>
 
       <View style={{ position: "absolute", top: 40, width: "100%" }}>
@@ -41,9 +43,17 @@ const Pesquisa = () => {
           justifyContent: "space-between",
         }}
       >
-        <Image source={require("../assets/search_outline.png")} />
-        <Image source={require("../assets/plus_circle.png")} />
-        <Image source={require("../assets/person.png")} />
+        <TouchableOpacity>
+          <Image style={{ marginLeft: 10 }} source={require("../assets/search_outline.png")} />
+        </TouchableOpacity>
+
+        <TouchableOpacity>
+          <Image source={require("../assets/plus_circle.png")} />
+        </TouchableOpacity>
+
+        <TouchableOpacity>
+          <Image style={{ marginRight: 10 }} source={require("../assets/person.png")} />
+        </TouchableOpacity>
       </View>
     </View>
   );
