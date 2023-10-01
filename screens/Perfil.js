@@ -2,10 +2,11 @@ import {
   View,
   Image,
   Text,
-  Pressable,
   TouchableOpacity,
   ScrollView,
 } from "react-native";
+
+import PopupMenu from "../components/PopupMenu";
 
 const Perfil = () => {
   return (
@@ -25,12 +26,7 @@ const Perfil = () => {
             style={{ width: 20, height: 20, marginLeft: 40 }}
           />
         </TouchableOpacity>
-        <TouchableOpacity>
-          <Image
-            source={require("../assets/people_icon.png")}
-            style={{ width: 20, height: 20, marginRight: 40 }}
-          />
-        </TouchableOpacity>
+        <PopupMenu />
       </View>
 
       {/* Informação do perfil*/}
@@ -60,19 +56,23 @@ const Perfil = () => {
                 padding: 5,
                 marginHorizontal: 5,
                 borderRadius: 5,
+                borderColor: 'black',
+                borderWidth: 1
               }}
             >
               <Text style={{ fontWeight: "bold", color: "white" }}>+ ADD</Text>
             </TouchableOpacity>
             <TouchableOpacity
               style={{
-                backgroundColor: "#3291EA",
+                
                 padding: 5,
                 marginHorizontal: 5,
                 borderRadius: 5,
+                borderColor: 'black',
+                borderWidth: 1
               }}
             >
-              <Text style={{ fontWeight: "bold", color: "white" }}>+ ADD</Text>
+              <Text>Mensagem</Text>
             </TouchableOpacity>
           </View>
         </View>
