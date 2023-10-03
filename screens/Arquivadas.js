@@ -21,16 +21,17 @@ const Arquivadas = () => {
       <View
         style={{
           flex: 1,
-          marginTop: 22,
+          marginTop: 30,
           flexDirection: "row",
-          justifyContent: "center",
           alignItems: "center",
+          
+
         }}
       >
         <TouchableOpacity>
           <Image
             source={require("../assets/btnVoltar.png")}
-            style={{ width: 30, height: 30, marginRight: 70 }}
+            style={{ width: 20, height: 20, marginRight: 100, marginLeft: 30,}}
             resizeMode="contain"
           />
         </TouchableOpacity>
@@ -84,6 +85,7 @@ const Arquivadas = () => {
           height: 45,
           flexDirection: "row",
           justifyContent: "space-between",
+         paddingBottom: 10,
         }}
       >
         <TouchableOpacity>

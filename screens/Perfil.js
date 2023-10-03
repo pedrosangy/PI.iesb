@@ -49,43 +49,21 @@ const Perfil = () => {
           <Text style={{ fontSize: 12, paddingLeft: 5 }}>
             Designer, 23 anos
           </Text>
-          <View style={{ flexDirection: "row" }}>
-            <TouchableOpacity
-              style={{
-                backgroundColor: "#3291EA",
-                padding: 5,
-                marginHorizontal: 5,
-                borderRadius: 5,
-                borderColor: 'black',
-                borderWidth: 1
-              }}
-            >
-              <Text style={{ fontWeight: "bold", color: "white" }}>+ ADD</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={{
-                
-                padding: 5,
-                marginHorizontal: 5,
-                borderRadius: 5,
-                borderColor: 'black',
-                borderWidth: 1
-              }}
-            >
-              <Text>Mensagem</Text>
-            </TouchableOpacity>
-          </View>
+           
         </View>
       </View>
-
+ 
       {/* Menu e as fotos postadas */}
       <View style={{ flex: 30 }}>
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between'}}>
+        <Text style={{  margin: 20, marginLeft: 175, fontWeight: 'bold' }}>FEED</Text>
         <TouchableOpacity>
           <Image
             source={require("../assets/menu_icon.png")}
-            style={{ alignSelf: "flex-end", margin: 20 }}
+            style={{  margin: 20 }}
           />
         </TouchableOpacity>
+        </View>
 
         <ScrollView>
           <View

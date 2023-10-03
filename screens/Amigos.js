@@ -9,7 +9,7 @@ import {
 
 const Amigos = () => {
   return (
-    <View style={{ flex: 1, justifyContent: "space-between", paddingTop: 36 }}>
+    <View style={{ flex: 1, justifyContent: "space-between", paddingTop: 55 }}>
       {/* Header */}
       <View style={{ flex: 1, flexDirection: "row" }}>
         <TouchableOpacity>
@@ -123,6 +123,7 @@ const Amigos = () => {
           flexDirection: "row",
           justifyContent: "space-between",
           alignItems: "center",
+          paddingBottom: 10,
         }}
       >
         <TouchableOpacity>

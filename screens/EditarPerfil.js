@@ -18,7 +18,7 @@ const EditarPerfil = () => {
         alignItems: "center",
         paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
       }}
-      source={require("../assets/telabackground.png")}
+      source={require("../assets/telalogin.png")}
     >
       <TouchableOpacity>
         <Image
@@ -47,13 +47,13 @@ const EditarPerfil = () => {
         >
           Editar Perfil
         </Text>
-        <Text style={{ alignSelf: "stretch" }}>Usuário</Text>
+        <Text style={{ alignSelf: "stretch",  }}>Usuário</Text>
         <TextInput
-          style={{ backgroundColor: "#D9D9D9", alignSelf: "stretch" }}
+          style={{ backgroundColor: "#D9D9D9", alignSelf: "stretch",padding: 5  }}
         />
         <Text style={{ alignSelf: "stretch" }}>Descrição</Text>
         <TextInput
-          style={{ backgroundColor: "#D9D9D9", alignSelf: "stretch" }}
+          style={{ backgroundColor: "#D9D9D9", alignSelf: "stretch", padding: 5  }}
         />
 
         <TouchableOpacity>

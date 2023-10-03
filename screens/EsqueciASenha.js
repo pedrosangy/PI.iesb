@@ -46,9 +46,9 @@ const EsqueciASenha = () => {
         >
           Esqueci minha senha
         </Text>
-        <Text style={{ alignSelf: "stretch", marginTop: 50 }}>E-mail</Text>
+        <Text style={{ alignSelf: "stretch", marginTop: 50 ,paddingHorizontal:33,}}>E-mail</Text>
         <TextInput
-          style={{ backgroundColor: "#D9D9D9", alignSelf: "stretch" }}
+          style={{ backgroundColor: "#D9D9D9", paddingHorizontal:80,padding:5 }}
         />
 
         <TouchableOpacity>

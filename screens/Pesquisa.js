@@ -7,7 +7,8 @@ const Pesquisa = () => {
         <TouchableOpacity>
           <Image
             source={require("../assets/btnVoltar.png")}
-            style={{ width: 20, height: 20, marginLeft: 12 }}
+            resizeMode="contain"
+            style={{ width: 20, height: 20, marginLeft: 36 }}
           />
         </TouchableOpacity>
       </View>
@@ -29,7 +30,7 @@ const Pesquisa = () => {
             height: 20,
             position: "absolute",
             right: 25,
-            top: 10,
+            top: 5,
             alignSelf: "flex-end",
           }}
         />

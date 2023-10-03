@@ -1,24 +1,23 @@
-import { View, StyleSheet, Text, Image, TouchableOpacity } from "react-native";
+import { View, StyleSheet, Text, Image, TouchableOpacity } from 'react-native';
 
 const Configuracoes = () => {
   return (
     <View
       style={{
         flex: 1,
-        flexDirection: "column",
-        justifyContent: "space-between",
-        paddingTop: 20,
-      }}
-    >
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        paddingTop: 40,
+      }}>
       <View style={styles.header}>
         <TouchableOpacity>
           <Image
-            source={require("../assets/btnVoltar.png")}
-            style={{ width: 30, height: 30, marginRight: 70 }}
+            source={require('../assets/btnVoltar.png')}
+            style={{ width: 20, height: 20, marginRight: 90, marginLeft: 30 }}
             resizeMode="contain"
           />
         </TouchableOpacity>
-        <Text style={{ marginRight: 85, fontWeight: "bold", fontSize: 15 }}>
+        <Text style={{ marginRight: 125, fontWeight: 'bold', fontSize: 15 }}>
           Configuracoes
         </Text>
       </View>
@@ -27,13 +26,12 @@ const Configuracoes = () => {
         <TouchableOpacity>
           <Text
             style={{
-              backgroundColor: "#D9D9D9",
+              backgroundColor: '#D9D9D9',
               padding: 10,
               marginHorizontal: 20,
               marginVertical: 5,
-              fontWeight: "bold",
-            }}
-          >
+              fontWeight: 'bold',
+            }}>
             Conta Privada
           </Text>
         </TouchableOpacity>
@@ -41,13 +39,12 @@ const Configuracoes = () => {
         <TouchableOpacity>
           <Text
             style={{
-              backgroundColor: "#D9D9D9",
+              backgroundColor: '#D9D9D9',
               padding: 10,
               marginHorizontal: 20,
               marginVertical: 5,
-              fontWeight: "bold",
-            }}
-          >
+              fontWeight: 'bold',
+            }}>
             Editar senha
           </Text>
         </TouchableOpacity>
@@ -55,13 +52,12 @@ const Configuracoes = () => {
         <TouchableOpacity>
           <Text
             style={{
-              backgroundColor: "#D9D9D9",
+              backgroundColor: '#D9D9D9',
               padding: 10,
               marginHorizontal: 20,
               marginVertical: 5,
-              fontWeight: "bold",
-            }}
-          >
+              fontWeight: 'bold',
+            }}>
             Excluir conta
           </Text>
         </TouchableOpacity>
@@ -69,13 +65,12 @@ const Configuracoes = () => {
         <TouchableOpacity>
           <Text
             style={{
-              backgroundColor: "#D9D9D9",
+              backgroundColor: '#D9D9D9',
               padding: 10,
               marginHorizontal: 20,
               marginVertical: 5,
-              fontWeight: "bold",
-            }}
-          >
+              fontWeight: 'bold',
+            }}>
             Sair
           </Text>
         </TouchableOpacity>
@@ -83,25 +78,27 @@ const Configuracoes = () => {
 
       <View
         style={{
-          width: "100%",
+          width: '100%',
           height: 45,
-          flexDirection: "row",
-          justifyContent: "space-between",
-        }}
-      >
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+        }}>
         <TouchableOpacity>
           <Image
             style={{ marginLeft: 10 }}
-            source={require("../assets/search_outline.png")}
+            source={require('../assets/search_outline.png')}
           />
         </TouchableOpacity>
 
         <TouchableOpacity>
-          <Image source={require("../assets/plus_circle.png")} />
+          <Image source={require('../assets/plus_circle.png')} />
         </TouchableOpacity>
 
         <TouchableOpacity>
-          <Image style={{ marginRight: 10 }}  source={require("../assets/person.png")} />
+          <Image
+            style={{ marginRight: 10 }}
+            source={require('../assets/person.png')}
+          />
         </TouchableOpacity>
       </View>
     </View>
@@ -111,9 +108,9 @@ const Configuracoes = () => {
 const styles = StyleSheet.create({
   header: {
     marginTop: 22,
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
 

@@ -1,4 +1,4 @@
-import Perfil from './screens/Perfil';
+import Perfil from './screens/Mensagem'
 
 const App = () => {
   return (
