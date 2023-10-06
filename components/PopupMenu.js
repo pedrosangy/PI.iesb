@@ -2,32 +2,28 @@ import React, { useState } from "react";
 import { TouchableOpacity, View, Image, Modal, Text } from "react-native";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
-const PopupMenu = () => {
+const PopupMenu = ({ navigation }) => {
   const [visible, setVisible] = useState(false);
   const options = [
     {
       title: "Configurações",
-      action: () => alert("Configurações"),
+      action: () => navigation.navigate("Configuracoes"),
     },
     {
       title: "Arquivadas",
-      action: () => alert("Arquivadas"),
+      action: () => navigation.navigate("Arquivadas"),
     },
     {
       title: "Editar Perfil",
-      action: () => alert("Editar Perfil"),
-    },
-    {
-      title: "Editar Álbum",
-      action: () => alert("Editar Álbum"),
+      action: () => navigation.navigate('EditarPerfil'),
     },
   ];
   return (
     <>
       <TouchableOpacity onPress={() => setVisible(true)}>
         <Image
-          source={require("../assets/people_icon.png")}
-          style={{ width: 25, height: 25, marginRight: 40 }}
+          source={require("../assets/menu_icon.png")}
+          style={{ margin: 20 }}
         />
       </TouchableOpacity>
       <Modal transparent visible={visible}>
@@ -48,7 +44,7 @@ const PopupMenu = () => {
             {options.map((op, i) => (
               <TouchableOpacity
                 key={i}
-                onPress={() => op.action}
+                onPress={() => op.action()}
                 style={{
                   backgroundColor: "#fff",
                   borderColor: "#000",

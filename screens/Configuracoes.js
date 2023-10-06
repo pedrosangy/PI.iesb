@@ -1,6 +1,6 @@
 import { View, StyleSheet, Text, Image, TouchableOpacity } from 'react-native';
 
-const Configuracoes = () => {
+const Configuracoes = ({ navigation }) => {
   return (
     <View
       style={{
@@ -36,7 +36,7 @@ const Configuracoes = () => {
           </Text>
         </TouchableOpacity>
 
-        <TouchableOpacity>
+        <TouchableOpacity onPress={()=>navigation.navigate('EditarSenha')}>
           <Text
             style={{
               backgroundColor: '#D9D9D9',
@@ -62,7 +62,7 @@ const Configuracoes = () => {
           </Text>
         </TouchableOpacity>
 
-        <TouchableOpacity>
+        <TouchableOpacity onPress={()=>navigation.goToTop()}>
           <Text
             style={{
               backgroundColor: '#D9D9D9',

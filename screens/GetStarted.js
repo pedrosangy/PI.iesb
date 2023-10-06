@@ -6,34 +6,38 @@ import {
   StatusBar,
   ImageBackground,
   Image,
-} from 'react-native';
+} from "react-native";
 
-const GetStarted = () => {
+const GetStarted = ({ navigation }) => {
   return (
-    <ImageBackground  
+    <ImageBackground
       style={{
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
+        justifyContent: "center",
+        alignItems: "center",
+        paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
       }}
-      source={require('../assets/telalogin.png')}>
+      source={require("../assets/telalogin.png")}
+    >
       <View //container
         style={{
           marginTop: 57,
-          backgroundColor: '#D9D9D9',
-          justifyContent: 'center',
+          backgroundColor: "#D9D9D9",
+          justifyContent: "center",
           width: 279,
           height: 96,
           borderRadius: 27,
-        }}>
+        }}
+      >
         <Text
+          onPress={() => navigation.navigate("Login")}
           style={{
-            textAlign: 'center',
+            textAlign: "center",
             fontSize: 40,
-          }}>
-          {' '}
-          Get Started{' '}
+          }}
+        >
+          {" "}
+          Get Started{" "}
         </Text>
       </View>
       <View>
@@ -41,7 +45,7 @@ const GetStarted = () => {
           style={{
             marginTop: 50,
           }}
-          source={require('../assets/Vector.png')}
+          source={require("../assets/Vector.png")}
         />
       </View>
     </ImageBackground>

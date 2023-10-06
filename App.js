@@ -1,8 +1,12 @@
-import Perfil from './screens/Mensagem'
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import MainNavigator from './routes/MainNavigator';
 
 const App = () => {
   return (
-    <Perfil />
+    <NavigationContainer>
+        <MainNavigator />
+    </NavigationContainer>
   )
 }
 

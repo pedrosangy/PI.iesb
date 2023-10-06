@@ -7,12 +7,12 @@ import {
   ScrollView,
 } from 'react-native';
 
-const Galeria = () => {
+const Galeria = ({ navigation }) => {
   return (
     <View style={{ flex: 1, justifyContent: 'space-between', paddingTop: 36 }}>
       {/* Header */}
       <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center' }}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={()=>{navigation.goBack()}}>
           <Image
             source={require('../assets/btnVoltar.png')}
             resizeMode="contain"
@@ -111,18 +111,18 @@ const Galeria = () => {
           alignItems: 'center',
           paddingVertical: 5,
         }}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={()=>navigation.navigate('Pesquisa')}>
           <Image
             source={require('../assets/search_outline.png')}
             style={{ marginLeft: 20 }}
           />
         </TouchableOpacity>
 
-        <TouchableOpacity>
+        <TouchableOpacity onPress={()=>navigation.navigate('Galeria')}>
           <Image source={require('../assets/plus_circle.png')} />
         </TouchableOpacity>
 
-        <TouchableOpacity>
+        <TouchableOpacity onPress={()=>navigation.navigate('Perfil')}>
           <Image
             source={require('../assets/person.png')}
             style={{ marginRight: 30 }}

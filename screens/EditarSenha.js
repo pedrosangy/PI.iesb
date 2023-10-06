@@ -9,7 +9,7 @@ import {
   TouchableOpacity
 } from "react-native";
 
-const EditarSenha = () => {
+const EditarSenha = ({ navigation }) => {
   return (
     <ImageBackground
       style={{
@@ -64,7 +64,7 @@ const EditarSenha = () => {
           secureTextEntry={true}
         />
 
-        <TouchableOpacity>
+        <TouchableOpacity onPress={()=>navigation.goBack()}>
         <Text
           style={{
             backgroundColor: "#D9D9D9",
