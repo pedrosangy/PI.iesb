@@ -2,7 +2,7 @@ import { View, Image, Text, TouchableOpacity, ScrollView } from 'react-native';
 
 import PopupMenu from '../components/PopupMenu';
 
-const TelaAmigo = () => {
+const TelaAmigo = ({ navigation }) => {
   return (
     <View style={{ flex: 1, justifyContent: 'flex-start', paddingTop: 20 }}>
       {/* Header */}
@@ -13,7 +13,7 @@ const TelaAmigo = () => {
           justifyContent: 'space-between',
           paddingTop: 30,
         }}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={()=>navigation.goBack()}>
           <Image
             source={require('../assets/btnVoltar.png')}
             style={{ width: 15, height: 20, marginLeft: 40 }}
@@ -52,6 +52,7 @@ const TelaAmigo = () => {
               <Text style={{ fontWeight: 'bold', color: 'white' }}>+ ADD</Text>
             </TouchableOpacity>
             <TouchableOpacity
+                onPress={()=>navigation.navigate('Mensagem')}
               style={{
                 padding: 5,
                 marginHorizontal: 5,
@@ -147,18 +148,18 @@ const TelaAmigo = () => {
           paddingVertical: 10,
           paddingBottom:20,
         }}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={()=>navigation.navigate('Pesquisa')}>
           <Image
             source={require('../assets/search_outline.png')}
             style={{ marginLeft: 15 }}
           />
         </TouchableOpacity>
 
-        <TouchableOpacity>
+        <TouchableOpacity onPress={()=>navigation.navigate('Galeria')}>
           <Image source={require('../assets/plus_circle.png')} />
         </TouchableOpacity>
 
-        <TouchableOpacity>
+        <TouchableOpacity onPress={()=>navigation.navigate('Perfil')}>
           <Image
             source={require('../assets/person.png')}
             style={{ marginRight: 15 }}

@@ -1,10 +1,10 @@
 import { View, Text, Image, TextInput, TouchableOpacity } from 'react-native';
 
-const Pesquisa = () => {
+const Mensagem = ({ navigation }) => {
   return (
     <View style={{ flex: 1, justifyContent: 'space-between', marginTop: 50 }}>
       <View style={{ flexDirection: 'row', justifyContent: 'flex-start' }}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={()=>navigation.goBack()}>
           <Image
             source={require('../assets/btnVoltar.png')}
             resizeMode="contain"
@@ -65,4 +65,4 @@ const Pesquisa = () => {
   );
 };
 
-export default Pesquisa;
+export default Mensagem;

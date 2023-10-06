@@ -1,14 +1,8 @@
-import {
-  View,
-  Image,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-} from "react-native";
+import { View, Image, Text, TouchableOpacity, ScrollView } from "react-native";
 
 import PopupMenu from "../components/PopupMenu";
 
-const Perfil = () => {
+const Perfil = ({ navigation }) => {
   return (
     <View style={{ flex: 1, justifyContent: "flex-start", paddingTop: 20 }}>
       {/* Header */}
@@ -20,13 +14,19 @@ const Perfil = () => {
           paddingTop: 20,
         }}
       >
-        <TouchableOpacity>
+        <TouchableOpacity onPress={()=>navigation.goBack()}>
           <Image
             source={require("../assets/btnVoltar.png")}
             style={{ width: 20, height: 20, marginLeft: 40 }}
           />
         </TouchableOpacity>
-        <PopupMenu />
+
+        <TouchableOpacity onPress={() => navigation.navigate('Amigos')}>
+          <Image
+            source={require("../assets/people_icon.png")}
+            style={{ width: 25, height: 25, marginRight: 40 }}
+          />
+        </TouchableOpacity>
       </View>
 
       {/* Informação do perfil*/}
@@ -49,20 +49,16 @@ const Perfil = () => {
           <Text style={{ fontSize: 12, paddingLeft: 5 }}>
             Designer, 23 anos
           </Text>
-           
         </View>
       </View>
- 
+
       {/* Menu e as fotos postadas */}
       <View style={{ flex: 30 }}>
-        <View style={{ flexDirection: 'row', justifyContent: 'space-between'}}>
-        <Text style={{  margin: 20, marginLeft: 175, fontWeight: 'bold' }}>FEED</Text>
-        <TouchableOpacity>
-          <Image
-            source={require("../assets/menu_icon.png")}
-            style={{  margin: 20 }}
-          />
-        </TouchableOpacity>
+        <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+          <Text style={{ margin: 20, marginLeft: 175, fontWeight: "bold" }}>
+            FEED
+          </Text>
+          <PopupMenu />
         </View>
 
         <ScrollView>
@@ -113,9 +109,7 @@ const Perfil = () => {
               />
             </View>
 
-            <View
-              style={{ width: "50%", height: 200 }}
-            >
+            <View style={{ width: "50%", height: 200 }}>
               <Image
                 source={require("../assets/imagem6.png")}
                 resizeMode="cover"
@@ -133,21 +127,21 @@ const Perfil = () => {
           flexDirection: "row",
           justifyContent: "space-between",
           alignItems: "center",
-          paddingVertical: 10
+          paddingVertical: 10,
         }}
       >
-        <TouchableOpacity>
+        <TouchableOpacity onPress={()=>navigation.navigate('Pesquisa')}>
           <Image
             source={require("../assets/search_outline.png")}
             style={{ marginLeft: 10 }}
           />
         </TouchableOpacity>
 
-        <TouchableOpacity>
+        <TouchableOpacity onPress={()=>navigation.navigate('Galeria')}>
           <Image source={require("../assets/plus_circle.png")} />
         </TouchableOpacity>
 
-        <TouchableOpacity>
+        <TouchableOpacity onPress={()=>navigation.navigate('Perfil')}>
           <Image
             source={require("../assets/person.png")}
             style={{ marginRight: 10 }}

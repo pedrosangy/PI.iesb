@@ -9,7 +9,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-const Cadastro = () => {
+const Cadastro = ({ navigation }) => {
   return (
     <ImageBackground
       style={{
@@ -71,7 +71,7 @@ const Cadastro = () => {
           <TextInput
             style={{ backgroundColor: '#D9D9D9', alignSelf: 'stretch' }}
           />
-          <TouchableOpacity>
+          <TouchableOpacity onPress={()=>{navigation.navigate('Login')}}>
             <Text
               style={{
                 marginTop: 10,

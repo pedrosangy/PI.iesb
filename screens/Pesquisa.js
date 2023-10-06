@@ -1,10 +1,10 @@
 import { View, Text, Image, TextInput, TouchableOpacity } from "react-native";
 
-const Pesquisa = () => {
+const Pesquisa = ({ navigation }) => {
   return (
     <View style={{ flex: 1, justifyContent: "space-between", marginTop: 50 }}>
       <View style={{ flexDirection: "row", justifyContent: "flex-start" }}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={()=>navigation.goBack()}>
           <Image
             source={require("../assets/btnVoltar.png")}
             resizeMode="contain"
@@ -44,15 +44,15 @@ const Pesquisa = () => {
           justifyContent: "space-between",
         }}
       >
-        <TouchableOpacity>
+        <TouchableOpacity onPress={()=>{navigation.navigate('Pesquisa')}}>
           <Image style={{ marginLeft: 10 }} source={require("../assets/search_outline.png")} />
         </TouchableOpacity>
 
-        <TouchableOpacity>
+        <TouchableOpacity onPress={()=>{navigation.navigate('Galeria')}}>
           <Image source={require("../assets/plus_circle.png")} />
         </TouchableOpacity>
 
-        <TouchableOpacity>
+        <TouchableOpacity onPress={()=>{navigation.navigate('Perfil')}}>
           <Image style={{ marginRight: 10 }} source={require("../assets/person.png")} />
         </TouchableOpacity>
       </View>

@@ -1,7 +1,7 @@
 import { View, Text, TextInput, Image, ImageBackground, Platform, StatusBar } from "react-native";
 
 
-const Login = () => {
+const Login = ({ navigation }) => {
   return (
     <ImageBackground
       style={{
@@ -54,6 +54,7 @@ const Login = () => {
                 paddingHorizontal: 30,
                 
             }}
+            onPress={() => navigation.navigate('EsqueciASenha')}
             >
             Esqueceu a senha?
             </Text>
@@ -66,6 +67,7 @@ const Login = () => {
                 padding: 5,
                 paddingHorizontal: 53,
             }}
+            onPress={() => navigation.navigate('Cadastro')}
             >
             Cadastre-se
             </Text>
@@ -78,6 +80,7 @@ const Login = () => {
                 padding: 5,
                 paddingHorizontal: 30,
             }}
+            onPress={() => navigation.navigate('Perfil')}
             >
             Entrar
             </Text>

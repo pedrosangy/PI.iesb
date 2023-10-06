@@ -9,7 +9,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-const EditarPerfil = () => {
+const EditarPerfil = ({ navigation }) => {
   return (
     <ImageBackground
       style={{
@@ -56,7 +56,7 @@ const EditarPerfil = () => {
           style={{ backgroundColor: "#D9D9D9", alignSelf: "stretch", padding: 5  }}
         />
 
-        <TouchableOpacity>
+        <TouchableOpacity onPress={()=>navigation.goBack()}>
           <Text
             style={{
               backgroundColor: "#D9D9D9",

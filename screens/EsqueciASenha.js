@@ -9,7 +9,7 @@ import {
   TouchableOpacity
 } from "react-native";
 
-const EsqueciASenha = () => {
+const EsqueciASenha = ({ navigation }) => {
   return (
     <ImageBackground
       style={{
@@ -51,7 +51,7 @@ const EsqueciASenha = () => {
           style={{ backgroundColor: "#D9D9D9", paddingHorizontal:80,padding:5 }}
         />
 
-        <TouchableOpacity>
+        <TouchableOpacity onPress={()=>{navigation.navigate('Login')}}>
         <Text
           style={{
             backgroundColor: "#D9D9D9",

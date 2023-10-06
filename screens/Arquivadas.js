@@ -7,7 +7,7 @@ import {
   ScrollView,
 } from "react-native";
 
-const Arquivadas = () => {
+const Arquivadas = ({ navigation }) => {
   return (
     <View
       style={{
@@ -28,7 +28,7 @@ const Arquivadas = () => {
 
         }}
       >
-        <TouchableOpacity>
+        <TouchableOpacity onPress={()=>navigation.goBack()}>
           <Image
             source={require("../assets/btnVoltar.png")}
             style={{ width: 20, height: 20, marginRight: 100, marginLeft: 30,}}
@@ -88,18 +88,18 @@ const Arquivadas = () => {
          paddingBottom: 10,
         }}
       >
-        <TouchableOpacity>
+        <TouchableOpacity onPress={()=>navigation.navigate('Pesquisa')}>
           <Image
             style={{ marginLeft: 10 }}
             source={require("../assets/search_outline.png")}
           />
         </TouchableOpacity>
 
-        <TouchableOpacity>
+        <TouchableOpacity onPress={()=>navigation.navigate('Galeria')}>
           <Image source={require("../assets/plus_circle.png")} />
         </TouchableOpacity>
 
-        <TouchableOpacity>
+        <TouchableOpacity onPress={()=>navigation.navigate('Perfil')}>
           <Image
             style={{ marginRight: 10 }}
             source={require("../assets/person.png")}
