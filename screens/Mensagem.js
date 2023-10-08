@@ -1,65 +1,68 @@
-import { View, Text, Image, TextInput, TouchableOpacity } from 'react-native';
+import { useState } from "react";
+import { View, Text, Image, TextInput, TouchableOpacity } from "react-native";
 
-const Mensagem = ({ navigation }) => {
+const Mensagem = ({ route, navigation }) => {
+  const [mensagem, setMensagem] = useState();
+  const { nome } = route.params;
   return (
-    <View style={{ flex: 1, justifyContent: 'space-between', marginTop: 50 }}>
-      <View style={{ flexDirection: 'row', justifyContent: 'flex-start' }}>
-        <TouchableOpacity onPress={()=>navigation.goBack()}>
-          <Image
-            source={require('../assets/btnVoltar.png')}
-            resizeMode="contain"
-            style={{ width: 20, height: 20, marginLeft: 36 }}
-          />
-        </TouchableOpacity>
-      </View>
-
-      <View style={{ position: 'absolute', top: 40, width: '100%' }}>
-        <TextInput
-          placeholder={'Pesquisar'}
-          style={{
-            backgroundColor: '#D9D9D9',
-            marginHorizontal: 20,
-            padding: 6,
-            borderRadius: 20,
-          }}
-        />
-        <Image
-          source={require('../assets/search_outline.png')}
-          style={{
-            width: 20,
-            height: 20,
-            position: 'absolute',
-            right: 25,
-            top: 5,
-            alignSelf: 'flex-end',
-          }}
-        />
-      </View>
-
+    <View style={{ flex: 1, justifyContent: "flex-start", paddingTop: 20 }}>
+      {/* Header */}
       <View
         style={{
-          width: '100%',
-          height: 45,
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-        }}>
-        <TouchableOpacity>
+          flex: 1 / 3,
+          flexDirection: "row",
+          justifyContent: "space-between",
+          paddingTop: 20
+        }}
+      >
+        <TouchableOpacity onPress={() => navigation.goBack()}>
           <Image
-            style={{ marginLeft: 10 }}
-            source={require('../assets/search_outline.png')}
+            source={require("../assets/btnVoltar.png")}
+            style={{ width: 20, height: 20, marginLeft: 40 }}
           />
         </TouchableOpacity>
-
-        <TouchableOpacity>
-          <Image source={require('../assets/plus_circle.png')} />
-        </TouchableOpacity>
-
-        <TouchableOpacity>
-          <Image
-            style={{ marginRight: 10 }}
-            source={require('../assets/person.png')}
-          />
-        </TouchableOpacity>
+      </View>
+      <View
+        style={{
+          flex: 1,
+          justifyContent: "center",
+          alignItems: "center",
+          borderBottomWidth: 1,
+          borderBottomColor: "#7A7A7A"
+        }}
+      >
+        <Image
+          source={require("../assets/amigo_icon.png")}
+          resizeMode="contain"
+          style={{
+            width: 60,
+            height: 60,
+            borderRadius: 100,
+            backgroundColor: "gray",
+          }}
+        />
+        <Text style={{ fontWeight: "bold" }}>{route.params?.nome}</Text>
+      </View>
+      <View style={{ flex: 4 }}></View>
+      <View
+        style={{
+          flex: 1 / 2,
+          justifyContent: "center"
+        }}
+      >
+        <TextInput
+          placeholder="Mensagem"
+          keyboardType="default"
+          value={mensagem}
+          onChanceText={(text) => setMensagem(text)}
+          style={{
+            backgroundColor: "#D9D9D9",
+            padding: 5,
+            marginHorizontal: 20,
+            borderRadius: 10,
+            alignSelf: "stretch",
+          }}
+        />
       </View>
     </View>
   );

@@ -12,7 +12,7 @@ const Amigos = ({ navigation }) => {
     <View style={{ flex: 1, justifyContent: "space-between", paddingTop: 55 }}>
       {/* Header */}
       <View style={{ flex: 1, flexDirection: "row" }}>
-        <TouchableOpacity onPress={()=>navigation.goBack()}>
+        <TouchableOpacity onPress={() => navigation.goBack()}>
           <Image
             source={require("../assets/btnVoltar.png")}
             resizeMode="contain"
@@ -54,62 +54,158 @@ const Amigos = ({ navigation }) => {
       {/* parte que lista os amigos */}
       <View style={{ flex: 12, marginHorizontal: 12 }}>
         <ScrollView>
-          <View style={{ flex: 1, flexDirection: "row", padding: 12, justifyContent: 'space-between' }}>
-            <TouchableOpacity style={{flex: 1, flexDirection: "row" }} onPress={()=>navigation.navigate('TelaAmigo')}>
+          <View
+            style={{
+              flex: 1,
+              flexDirection: "row",
+              padding: 12,
+              justifyContent: "space-between",
+            }}
+          >
+            <TouchableOpacity
+              style={{ flex: 1, flexDirection: "row" }}
+              onPress={() => navigation.navigate("TelaAmigo", {
+                nome: 'Natália',
+                descricao: 'Artista, 22 anos'
+              })}
+            >
               <Image source={require("../assets/amigo_icon.png")} />
-              <Text style={{ fontWeight: "bold", marginLeft: 12 }}>Natália</Text>
+              <Text style={{ fontWeight: "bold", marginLeft: 12 }}>
+                Natália
+              </Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={()=>navigation.navigate('Mensagem')}>
+            <TouchableOpacity onPress={() => navigation.navigate("Mensagem",{
+                nome: 'Natália'
+            })}>
               <Text style={{ fontWeight: "bold" }}>Mensagem</Text>
             </TouchableOpacity>
           </View>
 
-          <View style={{ flex: 1, flexDirection: "row", padding: 12, justifyContent: 'space-between' }}>
-            <TouchableOpacity style={{flex: 1, flexDirection: "row" }} onPress={()=>navigation.navigate('TelaAmigo')}>
+          <View
+            style={{
+              flex: 1,
+              flexDirection: "row",
+              padding: 12,
+              justifyContent: "space-between",
+            }}
+          >
+            <TouchableOpacity
+              style={{ flex: 1, flexDirection: "row" }}
+              onPress={() => navigation.navigate("TelaAmigo", {
+                nome: 'Matheus',
+                descricao: 'UI/UX designer, 25 anos'
+              })}
+            >
               <Image source={require("../assets/amigo_icon.png")} />
-              <Text style={{ fontWeight: "bold", marginLeft: 12 }}>Matheus</Text>
+              <Text style={{ fontWeight: "bold", marginLeft: 12 }}>
+                Matheus
+              </Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={()=>navigation.navigate('Mensagem')}>
+            <TouchableOpacity onPress={() => navigation.navigate("Mensagem", {
+                nome: 'Matheus'
+            })}>
               <Text style={{ fontWeight: "bold" }}>Mensagem</Text>
             </TouchableOpacity>
           </View>
 
-          <View style={{ flex: 1, flexDirection: "row", padding: 12, justifyContent: 'space-between' }}>
-            <TouchableOpacity style={{flex: 1, flexDirection: "row" }} onPress={()=>navigation.navigate('TelaAmigo')}>
+          <View
+            style={{
+              flex: 1,
+              flexDirection: "row",
+              padding: 12,
+              justifyContent: "space-between",
+            }}
+          >
+            <TouchableOpacity
+              style={{ flex: 1, flexDirection: "row" }}
+              onPress={() => navigation.navigate("TelaAmigo", {
+                nome: 'Jorge',
+                descricao: 'Gerente, 45 anos'
+              })}
+            >
               <Image source={require("../assets/amigo_icon.png")} />
               <Text style={{ fontWeight: "bold", marginLeft: 12 }}>Jorge</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={()=>navigation.navigate('Mensagem')}>
+            <TouchableOpacity onPress={() => navigation.navigate("Mensagem", {
+                nome: 'Jorge'
+            })}>
               <Text style={{ fontWeight: "bold" }}>Mensagem</Text>
             </TouchableOpacity>
           </View>
 
-          <View style={{ flex: 1, flexDirection: "row", padding: 12, justifyContent: 'space-between' }}>
-            <TouchableOpacity style={{flex: 1, flexDirection: "row" }} onPress={()=>navigation.navigate('TelaAmigo')}>
+          <View
+            style={{
+              flex: 1,
+              flexDirection: "row",
+              padding: 12,
+              justifyContent: "space-between",
+            }}
+          >
+            <TouchableOpacity
+              style={{ flex: 1, flexDirection: "row" }}
+              onPress={() => navigation.navigate("TelaAmigo", {
+                nome: 'Caio',
+                descricao: 'Designer gráfico, 28 anos'
+              })}
+            >
               <Image source={require("../assets/amigo_icon.png")} />
               <Text style={{ fontWeight: "bold", marginLeft: 12 }}>Caio</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={()=>navigation.navigate('Mensagem')}>
+            <TouchableOpacity onPress={() => navigation.navigate("Mensagem", {
+                nome: 'Caio'
+            })}>
               <Text style={{ fontWeight: "bold" }}>Mensagem</Text>
             </TouchableOpacity>
           </View>
 
-          <View style={{ flex: 1, flexDirection: "row", padding: 12, justifyContent: 'space-between' }}>
-            <TouchableOpacity style={{flex: 1, flexDirection: "row" }} onPress={()=>navigation.navigate('TelaAmigo')}>
+          <View
+            style={{
+              flex: 1,
+              flexDirection: "row",
+              padding: 12,
+              justifyContent: "space-between",
+            }}
+          >
+            <TouchableOpacity
+              style={{ flex: 1, flexDirection: "row" }}
+              onPress={() => navigation.navigate("TelaAmigo", {
+                nome: 'Karol',
+                descricao: 'Gerente, 34 anos'
+              })}
+            >
               <Image source={require("../assets/amigo_icon.png")} />
               <Text style={{ fontWeight: "bold", marginLeft: 12 }}>Karol</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={()=>navigation.navigate('Mensagem')}>
+            <TouchableOpacity onPress={() => navigation.navigate("Mensagem", {
+                nome: 'Karol'
+            })}>
               <Text style={{ fontWeight: "bold" }}>Mensagem</Text>
             </TouchableOpacity>
           </View>
 
-          <View style={{ flex: 1, flexDirection: "row", padding: 12, justifyContent: 'space-between' }}>
-            <TouchableOpacity style={{flex: 1, flexDirection: "row" }} onPress={()=>navigation.navigate('TelaAmigo')}>
+          <View
+            style={{
+              flex: 1,
+              flexDirection: "row",
+              padding: 12,
+              justifyContent: "space-between",
+            }}
+          >
+            <TouchableOpacity
+              style={{ flex: 1, flexDirection: "row" }}
+              onPress={() => navigation.navigate("TelaAmigo", {
+                nome: 'Nicolas',
+                descricao: 'Gerente, 45 anos'
+              })}
+            >
               <Image source={require("../assets/amigo_icon.png")} />
-              <Text style={{ fontWeight: "bold", marginLeft: 12 }}>Nicolas</Text>
+              <Text style={{ fontWeight: "bold", marginLeft: 12 }}>
+                Nicolas
+              </Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={()=>navigation.navigate('Mensagem')}>
+            <TouchableOpacity onPress={() => navigation.navigate("Mensagem", {
+                nome: 'Nicolas'
+            })}>
               <Text style={{ fontWeight: "bold" }}>Mensagem</Text>
             </TouchableOpacity>
           </View>
@@ -126,18 +222,18 @@ const Amigos = ({ navigation }) => {
           paddingBottom: 10,
         }}
       >
-        <TouchableOpacity onPress={()=>navigation.navigate('Pesquisa')}>
+        <TouchableOpacity onPress={() => navigation.navigate("Pesquisa")}>
           <Image
             style={{ marginLeft: 10 }}
             source={require("../assets/search_outline.png")}
           />
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={()=>navigation.navigate('Galeria')}>
+        <TouchableOpacity onPress={() => navigation.navigate("Galeria")}>
           <Image source={require("../assets/plus_circle.png")} />
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={()=>navigation.navigate('Perfil')}>
+        <TouchableOpacity onPress={() => navigation.navigate("Perfil")}>
           <Image
             style={{ marginRight: 10 }}
             source={require("../assets/person.png")}

@@ -1,6 +1,6 @@
 import { View, StyleSheet, Text, Image, TouchableOpacity } from 'react-native';
 
-const Configuracoes = ({ navigation }) => {
+const Menu = ({ navigation }) => {
   return (
     <View
       style={{
@@ -18,12 +18,12 @@ const Configuracoes = ({ navigation }) => {
           />
         </TouchableOpacity>
         <Text style={{ marginRight: 125, fontWeight: 'bold', fontSize: 15 }}>
-          Configuracoes
+          Menu
         </Text>
       </View>
 
       <View style={{ marginTop: 20 }}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('Configuracoes')}>
           <Text
             style={{
               backgroundColor: '#D9D9D9',
@@ -32,11 +32,11 @@ const Configuracoes = ({ navigation }) => {
               marginVertical: 5,
               fontWeight: 'bold',
             }}>
-            Conta Privada
+            Configuracoes
           </Text>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={()=>navigation.navigate('EditarSenha')}>
+        <TouchableOpacity onPress={()=>navigation.navigate('Arquivadas')}>
           <Text
             style={{
               backgroundColor: '#D9D9D9',
@@ -45,11 +45,11 @@ const Configuracoes = ({ navigation }) => {
               marginVertical: 5,
               fontWeight: 'bold',
             }}>
-            Editar senha
+            Arquivadas
           </Text>
         </TouchableOpacity>
 
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('EditarPerfil')}>
           <Text
             style={{
               backgroundColor: '#D9D9D9',
@@ -58,22 +58,10 @@ const Configuracoes = ({ navigation }) => {
               marginVertical: 5,
               fontWeight: 'bold',
             }}>
-            Excluir conta
+            Editar Perfil
           </Text>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={()=>navigation.goToTop()}>
-          <Text
-            style={{
-              backgroundColor: '#D9D9D9',
-              padding: 10,
-              marginHorizontal: 20,
-              marginVertical: 5,
-              fontWeight: 'bold',
-            }}>
-            Sair
-          </Text>
-        </TouchableOpacity>
       </View>
 
       <View
@@ -83,18 +71,18 @@ const Configuracoes = ({ navigation }) => {
           flexDirection: 'row',
           justifyContent: 'space-between',
         }}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('Pesquisa')}>
           <Image
             style={{ marginLeft: 10 }}
             source={require('../assets/search_outline.png')}
           />
         </TouchableOpacity>
 
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('Galeria')}>
           <Image source={require('../assets/plus_circle.png')} />
         </TouchableOpacity>
 
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('Perfil')}>
           <Image
             style={{ marginRight: 10 }}
             source={require('../assets/person.png')}
@@ -114,4 +102,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Configuracoes;
+export default Menu;

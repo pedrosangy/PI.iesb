@@ -1,7 +1,5 @@
 import { View, Image, Text, TouchableOpacity, ScrollView } from "react-native";
 
-import PopupMenu from "../components/PopupMenu";
-
 const Perfil = ({ navigation }) => {
   return (
     <View style={{ flex: 1, justifyContent: "flex-start", paddingTop: 20 }}>
@@ -14,14 +12,14 @@ const Perfil = ({ navigation }) => {
           paddingTop: 20,
         }}
       >
-        <TouchableOpacity onPress={()=>navigation.goBack()}>
+        <TouchableOpacity onPress={() => navigation.goBack()}>
           <Image
             source={require("../assets/btnVoltar.png")}
             style={{ width: 20, height: 20, marginLeft: 40 }}
           />
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => navigation.navigate('Amigos')}>
+        <TouchableOpacity onPress={() => navigation.navigate("Amigos")}>
           <Image
             source={require("../assets/people_icon.png")}
             style={{ width: 25, height: 25, marginRight: 40 }}
@@ -58,7 +56,12 @@ const Perfil = ({ navigation }) => {
           <Text style={{ margin: 20, marginLeft: 175, fontWeight: "bold" }}>
             FEED
           </Text>
-          <PopupMenu />
+          <TouchableOpacity onPress={() => navigation.navigate('Menu')}>
+            <Image
+              source={require("../assets/menu_icon.png")}
+              style={{ margin: 20 }}
+            />
+          </TouchableOpacity>
         </View>
 
         <ScrollView>
@@ -130,18 +133,18 @@ const Perfil = ({ navigation }) => {
           paddingVertical: 10,
         }}
       >
-        <TouchableOpacity onPress={()=>navigation.navigate('Pesquisa')}>
+        <TouchableOpacity onPress={() => navigation.navigate("Pesquisa")}>
           <Image
             source={require("../assets/search_outline.png")}
             style={{ marginLeft: 10 }}
           />
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={()=>navigation.navigate('Galeria')}>
+        <TouchableOpacity onPress={() => navigation.navigate("Galeria")}>
           <Image source={require("../assets/plus_circle.png")} />
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={()=>navigation.navigate('Perfil')}>
+        <TouchableOpacity onPress={() => navigation.navigate("Perfil")}>
           <Image
             source={require("../assets/person.png")}
             style={{ marginRight: 10 }}
