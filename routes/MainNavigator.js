@@ -15,6 +15,7 @@ import GetStarted from "../screens/GetStarted";
 import Mensagem from "../screens/Mensagem";
 import Pesquisa from "../screens/Pesquisa";
 import TelaAmigo from "../screens/TelaAmigo";
+import Menu from "../screens/Menu";
 
 const Stack = createNativeStackNavigator();
 
@@ -33,6 +34,7 @@ const MainNavigator = () => {
         <>
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="Perfil" component={Perfil} />
+          <Stack.Screen name="Menu" component={Menu} />
           <Stack.Screen name="Amigos" component={Amigos} />
           <Stack.Screen name="TelaAmigo" component={TelaAmigo} />
           <Stack.Screen name="Mensagem" component={Mensagem} />

@@ -1,31 +1,36 @@
 import { View, Image, Text, TouchableOpacity, ScrollView } from 'react-native';
 
-import PopupMenu from '../components/PopupMenu';
-
-const TelaAmigo = ({ navigation }) => {
+const TelaAmigo = ({ route, navigation }) => {
+    const {nome, descricao} = route.params;
   return (
     <View style={{ flex: 1, justifyContent: 'flex-start', paddingTop: 20 }}>
       {/* Header */}
       <View
         style={{
-          flex: 1,
+          flex: 10/100,
           flexDirection: 'row',
           justifyContent: 'space-between',
           paddingTop: 30,
+          backgroundColor: 'red'
         }}>
         <TouchableOpacity onPress={()=>navigation.goBack()}>
           <Image
             source={require('../assets/btnVoltar.png')}
-            style={{ width: 15, height: 20, marginLeft: 40 }}
+            style={{ width: 20, height: 20, marginLeft: 40 }}
           />
         </TouchableOpacity>
-        <PopupMenu />
+        <TouchableOpacity onPress={() => navigation.navigate("Amigos")}>
+          <Image
+            source={require("../assets/people_icon.png")}
+            style={{ width: 25, height: 25, marginRight: 40 }}
+          />
+        </TouchableOpacity>
       </View>
 
       {/* Informação do perfil*/}
       <View
         style={{
-          flex: 4,
+          flex: 25/100,
           flexDirection: 'row',
           justifyContent: 'center',
           alignItems: 'center',
@@ -33,12 +38,12 @@ const TelaAmigo = ({ navigation }) => {
           borderBottomWidth: 1,
           paddingBottom: 10,
         }}>
-        <Image source={require('../assets/natalia.png')} />
+        <Image source={require('../assets/amigo_icon.png')} resizeMode='contain' style={{ height: 50, width: 50, margin: 30, backgroundColor: 'gray', borderRadius: 100 }} />
         <View>
           <Text style={{ fontSize: 16, fontWeight: 'bold', paddingLeft: 5 }}>
-            Natália
+            {route.params?.nome}
           </Text>
-          <Text style={{ fontSize: 12, paddingLeft: 5 }}>Artista, 22 anos</Text>
+          <Text style={{ fontSize: 12, paddingLeft: 5 }}>{route.params?.descricao}</Text>
           <View style={{ flexDirection: 'row' }}>
             <TouchableOpacity
               style={{
@@ -67,12 +72,12 @@ const TelaAmigo = ({ navigation }) => {
       </View>
 
       {/* Menu e as fotos postadas */}
-      <View style={{ flex: 30 }}>
+      <View style={{ flex: 90/100 }}>
         <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
           <Text style={{ margin: 20, marginLeft: 175, fontWeight: 'bold' }}>
             FEED
           </Text>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('Menu')}>
             <Image
               source={require('../assets/menu_icon.png')}
               style={{ margin: 20 }}
@@ -141,7 +146,7 @@ const TelaAmigo = ({ navigation }) => {
       {/* Footer */}
       <View
         style={{
-          flex: 1,
+          flex: 10/100,
           flexDirection: 'row',
           justifyContent: 'space-between',
           alignItems: 'center',
