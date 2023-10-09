@@ -1,4 +1,5 @@
-import { useState } from "react";
+import React from "react";
+import { TouchableOpacity } from "react-native";
 import {
   View,
   Text,
@@ -9,10 +10,13 @@ import {
   StatusBar,
 } from "react-native";
 
-const Login = ({ navigation }) => {
-  const [email, setEmail] = useState();
-  const [senha, setSenha] = useState();
+import { AuthContext } from "../routes/MainNavigator";
 
+const Login = ({ route, navigation }) => {
+  const [email, setEmail] = React.useState();
+  const [senha, setSenha] = React.useState();
+  const { signIn } = React.useContext(AuthContext);
+   
   return (
     <ImageBackground
       style={{
@@ -88,6 +92,7 @@ const Login = ({ navigation }) => {
           Cadastre-se
         </Text>
 
+        <TouchableOpacity onPress={() => signIn({ email, senha })} >
         <Text
           style={{
             backgroundColor: "#D9D9D9",
@@ -95,11 +100,10 @@ const Login = ({ navigation }) => {
             borderRadius: 20,
             padding: 5,
             paddingHorizontal: 30,
-          }}
-          onPress={() => navigation.navigate("Perfil")}
-        >
+          }}>
           Entrar
         </Text>
+        </TouchableOpacity>
       </View>
     </ImageBackground>
   );

@@ -1,13 +1,13 @@
-import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import MainNavigator from './routes/MainNavigator';
+import * as React from "react";
 
-const App = () => {
+import MainNavigator from "./routes/MainNavigator";
+
+
+
+const App = ({ navigation }) => {
   return (
-    <NavigationContainer>
-        <MainNavigator />
-    </NavigationContainer>
-  )
-}
+    <MainNavigator />
+  );
+};
 
 export default App;
