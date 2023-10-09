@@ -1,23 +1,28 @@
-import { View, StyleSheet, Text, Image, TouchableOpacity } from 'react-native';
+import React from 'react';
+import { View, StyleSheet, Text, Image, TouchableOpacity } from "react-native";
 
-const Configuracoes = ({ navigation }) => {
+import { AuthContext  } from '../routes/MainNavigator';
+
+const Configuracoes = ({ route, navigation }) => {
+  const { signOut } = React.useContext(AuthContext);
   return (
     <View
       style={{
         flex: 1,
-        flexDirection: 'column',
-        justifyContent: 'space-between',
+        flexDirection: "column",
+        justifyContent: "space-between",
         paddingTop: 40,
-      }}>
+      }}
+    >
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <Image
-            source={require('../assets/btnVoltar.png')}
+            source={require("../assets/btnVoltar.png")}
             style={{ width: 20, height: 20, marginRight: 90, marginLeft: 30 }}
             resizeMode="contain"
           />
         </TouchableOpacity>
-        <Text style={{ marginRight: 125, fontWeight: 'bold', fontSize: 15 }}>
+        <Text style={{ marginRight: 125, fontWeight: "bold", fontSize: 15 }}>
           Configuracoes
         </Text>
       </View>
@@ -26,25 +31,27 @@ const Configuracoes = ({ navigation }) => {
         <TouchableOpacity>
           <Text
             style={{
-              backgroundColor: '#D9D9D9',
+              backgroundColor: "#D9D9D9",
               padding: 10,
               marginHorizontal: 20,
               marginVertical: 5,
-              fontWeight: 'bold',
-            }}>
+              fontWeight: "bold",
+            }}
+          >
             Conta Privada
           </Text>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={()=>navigation.navigate('EditarSenha')}>
+        <TouchableOpacity onPress={() => navigation.navigate("EditarSenha")}>
           <Text
             style={{
-              backgroundColor: '#D9D9D9',
+              backgroundColor: "#D9D9D9",
               padding: 10,
               marginHorizontal: 20,
               marginVertical: 5,
-              fontWeight: 'bold',
-            }}>
+              fontWeight: "bold",
+            }}
+          >
             Editar senha
           </Text>
         </TouchableOpacity>
@@ -52,25 +59,27 @@ const Configuracoes = ({ navigation }) => {
         <TouchableOpacity>
           <Text
             style={{
-              backgroundColor: '#D9D9D9',
+              backgroundColor: "#D9D9D9",
               padding: 10,
               marginHorizontal: 20,
               marginVertical: 5,
-              fontWeight: 'bold',
-            }}>
+              fontWeight: "bold",
+            }}
+          >
             Excluir conta
           </Text>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={()=>navigation.goToTop()}>
+        <TouchableOpacity onPress={signOut} >
           <Text
             style={{
-              backgroundColor: '#D9D9D9',
+              backgroundColor: "#D9D9D9",
               padding: 10,
               marginHorizontal: 20,
               marginVertical: 5,
-              fontWeight: 'bold',
-            }}>
+              fontWeight: "bold",
+            }}
+          >
             Sair
           </Text>
         </TouchableOpacity>
@@ -78,26 +87,27 @@ const Configuracoes = ({ navigation }) => {
 
       <View
         style={{
-          width: '100%',
+          width: "100%",
           height: 45,
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-        }}>
+          flexDirection: "row",
+          justifyContent: "space-between",
+        }}
+      >
         <TouchableOpacity>
           <Image
             style={{ marginLeft: 10 }}
-            source={require('../assets/search_outline.png')}
+            source={require("../assets/search_outline.png")}
           />
         </TouchableOpacity>
 
         <TouchableOpacity>
-          <Image source={require('../assets/plus_circle.png')} />
+          <Image source={require("../assets/plus_circle.png")} />
         </TouchableOpacity>
 
         <TouchableOpacity>
           <Image
             style={{ marginRight: 10 }}
-            source={require('../assets/person.png')}
+            source={require("../assets/person.png")}
           />
         </TouchableOpacity>
       </View>
@@ -108,9 +118,9 @@ const Configuracoes = ({ navigation }) => {
 const styles = StyleSheet.create({
   header: {
     marginTop: 22,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
 
