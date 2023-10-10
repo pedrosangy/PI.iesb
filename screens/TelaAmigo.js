@@ -57,7 +57,9 @@ const TelaAmigo = ({ route, navigation }) => {
               <Text style={{ fontWeight: 'bold', color: 'white' }}>+ ADD</Text>
             </TouchableOpacity>
             <TouchableOpacity
-                onPress={()=>navigation.navigate('Mensagem')}
+                onPress={()=>navigation.navigate('Mensagem', {
+                    nome: route.params?.nome
+                })}
               style={{
                 padding: 5,
                 marginHorizontal: 5,

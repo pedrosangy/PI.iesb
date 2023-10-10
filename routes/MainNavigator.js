@@ -18,7 +18,7 @@ import Pesquisa from "../screens/Pesquisa";
 import TelaAmigo from "../screens/TelaAmigo";
 import Menu from "../screens/Menu";
 
-export const AuthContext = React.createContext();
+import { AuthContext } from "../contexts/authContext";
 
 const Stack = createNativeStackNavigator();
 
