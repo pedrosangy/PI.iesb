@@ -10,7 +10,7 @@ import {
   StatusBar,
 } from "react-native";
 
-import { AuthContext } from "../routes/MainNavigator";
+import { AuthContext } from "../contexts/authContext";
 
 const Login = ({ route, navigation }) => {
   const [email, setEmail] = React.useState();

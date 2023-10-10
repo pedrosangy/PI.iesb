@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, Text, Image, TouchableOpacity } from "react-native";
 
-import { AuthContext  } from '../routes/MainNavigator';
+import { AuthContext } from '../contexts/authContext';
 
 const Configuracoes = ({ route, navigation }) => {
   const { signOut } = React.useContext(AuthContext);
