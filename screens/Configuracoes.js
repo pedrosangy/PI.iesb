@@ -1,10 +1,8 @@
 import React from 'react';
 import { View, StyleSheet, Text, Image, TouchableOpacity } from "react-native";
 
-import { AuthContext } from '../contexts/authContext';
 
 const Configuracoes = ({ route, navigation }) => {
-  const { signOut } = React.useContext(AuthContext);
   return (
     <View
       style={{
@@ -70,19 +68,6 @@ const Configuracoes = ({ route, navigation }) => {
           </Text>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={signOut} >
-          <Text
-            style={{
-              backgroundColor: "#D9D9D9",
-              padding: 10,
-              marginHorizontal: 20,
-              marginVertical: 5,
-              fontWeight: "bold",
-            }}
-          >
-            Sair
-          </Text>
-        </TouchableOpacity>
       </View>
 
       <View

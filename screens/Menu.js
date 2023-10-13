@@ -9,20 +9,26 @@ const Menu = ({ navigation }) => {
         justifyContent: 'space-between',
         paddingTop: 40,
       }}>
-      <View style={styles.header}>
+        {/* Header */}
+      <View style={{
+            flex: 6/100,
+            flexDirection: 'row',
+
+            alignItems: 'center',
+      }}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <Image
             source={require('../assets/btnVoltar.png')}
-            style={{ width: 20, height: 20, marginRight: 90, marginLeft: 30 }}
-            resizeMode="contain"
+            style={{ width: 20, height: 20, marginLeft: 40 }}
           />
         </TouchableOpacity>
-        <Text style={{ marginRight: 125, fontWeight: 'bold', fontSize: 15 }}>
+        <Text style={{ marginLeft: 100, fontWeight: 'bold', fontSize: 16 }}>
           Menu
         </Text>
       </View>
+      {/* Botões do menu */}
+      <View style={{ flex: 88/100, justifyContent: 'center' }}>
 
-      <View style={{ marginTop: 20 }}>
         <TouchableOpacity onPress={() => navigation.navigate('Configuracoes')}>
           <Text
             style={{
@@ -66,10 +72,11 @@ const Menu = ({ navigation }) => {
 
       <View
         style={{
-          width: '100%',
-          height: 45,
-          flexDirection: 'row',
-          justifyContent: 'space-between',
+            flex: 6/100,
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+            paddingVertical: 10,
         }}>
         <TouchableOpacity onPress={() => navigation.navigate('Pesquisa')}>
           <Image
@@ -93,13 +100,5 @@ const Menu = ({ navigation }) => {
   );
 };
 
-const styles = StyleSheet.create({
-  header: {
-    marginTop: 22,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
 
 export default Menu;

@@ -1,9 +1,16 @@
 import { useState } from "react";
 import { View, Text, Image, TextInput, TouchableOpacity } from "react-native";
+import { GiftedChat } from "react-native-gifted-chat";
 
 const Mensagem = ({ route, navigation }) => {
-  const [mensagem, setMensagem] = useState();
   const { nome } = route.params;
+  const [messages, setMessages] = useState([]);
+
+  function onSend(newMessages = []) {
+    setMessages((previousMessages) =>
+      GiftedChat.append(previousMessages, newMessages)
+    );
+  }
   return (
     <View style={{ flex: 1, justifyContent: "flex-start", paddingTop: 20 }}>
       {/* Header */}
@@ -12,7 +19,7 @@ const Mensagem = ({ route, navigation }) => {
           flex: 1 / 3,
           flexDirection: "row",
           justifyContent: "space-between",
-          paddingTop: 20
+          paddingTop: 20,
         }}
       >
         <TouchableOpacity onPress={() => navigation.goBack()}>
@@ -28,7 +35,7 @@ const Mensagem = ({ route, navigation }) => {
           justifyContent: "center",
           alignItems: "center",
           borderBottomWidth: 1,
-          borderBottomColor: "#7A7A7A"
+          borderBottomColor: "#7A7A7A",
         }}
       >
         <Image
@@ -43,24 +50,12 @@ const Mensagem = ({ route, navigation }) => {
         />
         <Text style={{ fontWeight: "bold" }}>{route.params?.nome}</Text>
       </View>
-      <View style={{ flex: 4 }}></View>
-      <View
-        style={{
-          flex: 1 / 2,
-          justifyContent: "center"
-        }}
-      >
-        <TextInput
-          placeholder="Mensagem"
-          keyboardType="default"
-          value={mensagem}
-          onChanceText={(text) => setMensagem(text)}
-          style={{
-            backgroundColor: "#D9D9D9",
-            padding: 5,
-            marginHorizontal: 20,
-            borderRadius: 10,
-            alignSelf: "stretch",
+      <View style={{ flex: 4 }}>
+        <GiftedChat
+          messages={messages}
+          onSend={(newMessages) => onSend(newMessages)}
+          user={{
+            _id: 1,
           }}
         />
       </View>

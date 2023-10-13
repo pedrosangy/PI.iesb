@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { Alert } from "react-native";
 import {
   View,
   Text,
@@ -6,64 +8,98 @@ import {
   ImageBackground,
   Platform,
   StatusBar,
-  TouchableOpacity
+  TouchableOpacity,
 } from "react-native";
 
 const EsqueciASenha = ({ navigation }) => {
+  const [email, setEmail] = useState("");
+
+  const enviarEmail = () => {
+    Alert.alert(
+      "E-mail enviado",
+      "Um e-mail foi enviado para o endereço fornecido."
+    );
+  };
   return (
     <ImageBackground
       style={{
         flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
+        justifyContent: "space-between",
         paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
       }}
       source={require("../assets/telalogin.png")}
+      resizeMode="stretch"
     >
-      <TouchableOpacity>
-      <Image
-        style={{ position: "relative", top: -220, left: -135 }}
-        source={require("../assets/btnVoltar.png")}
-      />
-      </TouchableOpacity>
       <View
-        style={{
-          alignItems: "center",
-          backgroundColor: "white",
-          width: 270,
-          height: 270,
-          padding: 12,
-          borderRadius: 20,
-        }}
+        style={{ flex: 35 / 100 }}
       >
-        <Text
+        <TouchableOpacity
           style={{
-            padding: 10,
-            borderRadius: 27,
-            backgroundColor: "#D9D9D9",
-            textAlign: "center",
+            alignItems: "flex-end",
+            alignSelf: "flex-start",
+            padding: 20,
+            marginLeft: 50,
+            width: 20,
+            height: 20,
           }}
+          onPress={() => navigation.goBack()}
         >
-          Esqueci minha senha
-        </Text>
-        <Text style={{ alignSelf: "stretch", marginTop: 50 ,paddingHorizontal:33,}}>E-mail</Text>
-        <TextInput
-          style={{ backgroundColor: "#D9D9D9", paddingHorizontal:80,padding:5 }}
-        />
-
-        <TouchableOpacity onPress={()=>{navigation.navigate('Login')}}>
-        <Text
-          style={{
-            backgroundColor: "#D9D9D9",
-            marginTop: 70,
-            borderRadius: 20,
-            padding: 5,
-            paddingHorizontal: 30,
-          }}
-        >
-          Enviar
-        </Text>
+          <Image source={require("../assets/btnVoltar.png")} />
         </TouchableOpacity>
+      </View>
+
+      {/* Caixa com campos de entrada */}
+      <View style={{ flex: 65 / 100, alignItems: "center" }}>
+        <View
+          style={{
+            alignItems: "center",
+            backgroundColor: "white",
+            width: 270,
+            height: 300,
+            padding: 12,
+            borderRadius: 20,
+          }}
+        >
+          <Text
+            style={{
+              padding: 10,
+              borderRadius: 27,
+              backgroundColor: "#D9D9D9",
+              textAlign: "center",
+              fontSize: 16,
+              fontWeight: "bold",
+            }}
+          >
+            Esqueci a senha
+          </Text>
+          <Text
+            style={{ alignSelf: "stretch", fontSize: 16, fontWeight: "bold" }}
+          >
+            E-mail
+          </Text>
+          <TextInput
+            keyboardType="default"
+            value={email}
+            onChanceText={(text) => setEmail(text)}
+            style={{ backgroundColor: "#D9D9D9", alignSelf: "stretch" }}
+          />
+
+          <TouchableOpacity onPress={() => enviarEmail()}>
+            <Text
+              style={{
+                backgroundColor: "#D9D9D9",
+                marginTop: 10,
+                borderRadius: 20,
+                padding: 5,
+                paddingHorizontal: 30,
+                fontSize: 16,
+                fontWeight: "bold",
+              }}
+            >
+              Enviar
+            </Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </ImageBackground>
   );
