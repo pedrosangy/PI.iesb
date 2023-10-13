@@ -1,21 +1,25 @@
+import React from 'react';
 import { View, Image, Text, TouchableOpacity, ScrollView } from "react-native";
 
+import { AuthContext } from '../contexts/authContext';
+
 const Perfil = ({ navigation }) => {
+    const { signOut } = React.useContext(AuthContext);
   return (
     <View style={{ flex: 1, justifyContent: "flex-start", paddingTop: 20 }}>
       {/* Header */}
       <View
         style={{
-          flex: 1,
+          flex: 6/100,
           flexDirection: "row",
           justifyContent: "space-between",
           paddingTop: 20,
         }}
       >
-        <TouchableOpacity onPress={() => navigation.goBack()}>
+        <TouchableOpacity onPress={signOut}>
           <Image
-            source={require("../assets/btnVoltar.png")}
-            style={{ width: 20, height: 20, marginLeft: 40 }}
+            source={require("../assets/logout_icon.png")}
+            style={{ width: 30, height: 30, marginLeft: 40 }}
           />
         </TouchableOpacity>
 
@@ -30,7 +34,7 @@ const Perfil = ({ navigation }) => {
       {/* Informação do perfil*/}
       <View
         style={{
-          flex: 4,
+          flex: 20/100,
           flexDirection: "row",
           justifyContent: "center",
           alignItems: "center",
@@ -51,7 +55,7 @@ const Perfil = ({ navigation }) => {
       </View>
 
       {/* Menu e as fotos postadas */}
-      <View style={{ flex: 30 }}>
+      <View style={{ flex: 68/100, }}>
         <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
           <Text style={{ margin: 20, marginLeft: 175, fontWeight: "bold" }}>
             FEED
@@ -126,7 +130,7 @@ const Perfil = ({ navigation }) => {
       {/* Footer */}
       <View
         style={{
-          flex: 1,
+          flex: 6/100,
           flexDirection: "row",
           justifyContent: "space-between",
           alignItems: "center",

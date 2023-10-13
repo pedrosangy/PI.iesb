@@ -16,8 +16,10 @@ const GetStarted = ({ navigation }) => {
         justifyContent: "center",
         alignItems: "center",
         paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+        
       }}
       source={require("../assets/telalogin.png")}
+      resizeMode="stretch"
     >
       <View //container
         style={{

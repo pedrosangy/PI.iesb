@@ -1,17 +1,26 @@
+import React from 'react';
 import { View, Image, Text, TouchableOpacity, ScrollView } from 'react-native';
 
 const TelaAmigo = ({ route, navigation }) => {
     const {nome, descricao} = route.params;
+    const [texto, setTexto] = React.useState('+ ADD');
+
+    function mudarTexto() {{
+        if (texto == '+ ADD') {
+            setTexto('ADD');
+        } else {
+            setTexto('+ ADD')
+        }
+    }}
   return (
     <View style={{ flex: 1, justifyContent: 'flex-start', paddingTop: 20 }}>
       {/* Header */}
       <View
         style={{
-          flex: 10/100,
+          flex: 6/100,
           flexDirection: 'row',
           justifyContent: 'space-between',
           paddingTop: 30,
-          backgroundColor: 'red'
         }}>
         <TouchableOpacity onPress={()=>navigation.goBack()}>
           <Image
@@ -30,7 +39,7 @@ const TelaAmigo = ({ route, navigation }) => {
       {/* Informação do perfil*/}
       <View
         style={{
-          flex: 25/100,
+          flex: 20/100,
           flexDirection: 'row',
           justifyContent: 'center',
           alignItems: 'center',
@@ -53,8 +62,9 @@ const TelaAmigo = ({ route, navigation }) => {
                 borderRadius: 5,
                 borderColor: 'black',
                 borderWidth: 1,
-              }}>
-              <Text style={{ fontWeight: 'bold', color: 'white' }}>+ ADD</Text>
+              }}
+              onPress={() => mudarTexto()}>
+              <Text style={{ fontWeight: 'bold', color: 'white' }}>{texto}</Text>
             </TouchableOpacity>
             <TouchableOpacity
                 onPress={()=>navigation.navigate('Mensagem', {
@@ -74,7 +84,7 @@ const TelaAmigo = ({ route, navigation }) => {
       </View>
 
       {/* Menu e as fotos postadas */}
-      <View style={{ flex: 90/100 }}>
+      <View style={{ flex: 68/100 }}>
         <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
           <Text style={{ margin: 20, marginLeft: 175, fontWeight: 'bold' }}>
             FEED
@@ -148,7 +158,7 @@ const TelaAmigo = ({ route, navigation }) => {
       {/* Footer */}
       <View
         style={{
-          flex: 10/100,
+          flex: 6/100,
           flexDirection: 'row',
           justifyContent: 'space-between',
           alignItems: 'center',
